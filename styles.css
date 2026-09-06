@@ -1,0 +1,3287 @@
+/* =========================================================
+   घर सा Café (Ghar Sa Café) — Design System & Stylesheet
+   Warm, Nostalgic, Authentic Indian Homestyle Café
+   ========================================================= */
+
+:root {
+  /* Core Palette */
+  --warm-cream: #F7EEDC;
+  --warm-cream-light: #FDF9F0;
+  --warm-cream-dark: #EADDC2;
+  --haldi: #D99A27;
+  --haldi-light: #F8C360;
+  --haldi-dark: #B57D18;
+  --sindoor: #8B3028;
+  --sindoor-light: #B4463C;
+  --sindoor-dark: #671E18;
+  --wood-brown: #4A3024;
+  --wood-dark: #2A1A12;
+  --muted-green: #657052;
+  --muted-green-light: #8A9772;
+  --paper-white: #FAF6EE;
+  --ink-black: #261B16;
+  --card-bg: #FFFDF9;
+  
+  /* Stainless Steel Elements */
+  --steel-light: #f8fafc;
+  --steel-mid: #cbd5e1;
+  --steel-dark: #94a3b8;
+  --steel-deep: #475569;
+  --steel-rim: #e2e8f0;
+
+  /* Typography */
+  --font-display: 'Rozha One', serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-handwritten: 'Caveat', cursive;
+  --font-devanagari-hand: 'Kalam', cursive;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  /* Elevations */
+  --shadow-sm: 0 2px 6px rgba(74, 48, 36, 0.08);
+  --shadow-md: 0 6px 16px rgba(74, 48, 36, 0.12);
+  --shadow-lg: 0 12px 32px rgba(74, 48, 36, 0.16);
+  --shadow-steel: inset 0 3px 8px rgba(255, 255, 255, 0.8), inset 0 -4px 10px rgba(0, 0, 0, 0.25), 0 10px 25px rgba(74, 48, 36, 0.22);
+
+  /* Borders & Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+  --border-warm: 1px solid rgba(74, 48, 36, 0.14);
+}
+
+/* Global Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--haldi) var(--warm-cream-dark);
+}
+
+/* Customized Aesthetic Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--warm-cream-light);
+  border-left: 1px solid rgba(74, 48, 36, 0.08);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--haldi) 0%, var(--sindoor) 100%);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--warm-cream-light);
+  box-shadow: 0 1px 4px rgba(74, 48, 36, 0.25);
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--haldi-light) 0%, var(--sindoor-light) 100%);
+  box-shadow: 0 0 10px rgba(217, 154, 39, 0.6);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg, var(--haldi-dark) 0%, var(--sindoor-dark) 100%);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Inner Container Scrollbars (Drawers, Cart, Modals) */
+.cart-items-body::-webkit-scrollbar,
+.modal-card::-webkit-scrollbar,
+.mobile-drawer::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cart-items-body::-webkit-scrollbar-track,
+.modal-card::-webkit-scrollbar-track,
+.mobile-drawer::-webkit-scrollbar-track {
+  background: rgba(74, 48, 36, 0.04);
+  border-radius: var(--radius-full);
+}
+
+.cart-items-body::-webkit-scrollbar-thumb,
+.modal-card::-webkit-scrollbar-thumb,
+.mobile-drawer::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--haldi) 0%, var(--sindoor) 100%);
+  border-radius: var(--radius-full);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--warm-cream);
+  color: var(--ink-black);
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(rgba(74, 48, 36, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Accessibility Focus */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid var(--haldi);
+  outline-offset: 2px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.section-padding {
+  padding: 5.5rem 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-maroon {
+  color: var(--sindoor);
+}
+
+.text-haldi {
+  color: var(--haldi);
+}
+
+.w-full {
+  width: 100%;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
+/* =========================================================
+   VINTAGE PATTERNS & BORDERS
+   ========================================================= */
+
+/* Checkered Tablecloth Top Border */
+.tablecloth-top-border {
+  height: 10px;
+  width: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--sindoor),
+    var(--sindoor) 10px,
+    var(--paper-white) 10px,
+    var(--paper-white) 20px
+  );
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* Checkered Tablecloth Area */
+.tablecloth-pattern {
+  position: absolute;
+  inset: -15px;
+  background: 
+    linear-gradient(90deg, rgba(139, 48, 40, 0.14) 50%, transparent 50%),
+    linear-gradient(rgba(139, 48, 40, 0.14) 50%, transparent 50%),
+    #FFFDF8;
+  background-size: 24px 24px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  z-index: 1;
+  border: 1px solid rgba(139, 48, 40, 0.18);
+}
+
+/* Announcement Ticker */
+.top-announcement {
+  background: var(--wood-brown);
+  color: var(--warm-cream);
+  font-size: 0.85rem;
+  padding: 0.45rem 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+.announcement-content {
+  display: inline-flex;
+  gap: 1.25rem;
+  align-items: center;
+  animation: ticker-slide 35s linear infinite;
+}
+
+.announcement-content:hover {
+  animation-play-state: paused;
+}
+
+.announcement-content .dot {
+  color: var(--haldi);
+  font-weight: bold;
+}
+
+@keyframes ticker-slide {
+  0% { transform: translateX(10%); }
+  100% { transform: translateX(-60%); }
+}
+
+/* =========================================================
+   HEADER & NAVIGATION
+   ========================================================= */
+
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  background: rgba(247, 238, 220, 0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(74, 48, 36, 0.12);
+  transition: all 0.3s ease;
+}
+
+.main-header.scrolled {
+  box-shadow: var(--shadow-sm);
+  background: rgba(247, 238, 220, 0.98);
+}
+
+.header-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Brand Logo */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.brand-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chai-cup-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.15));
+}
+
+.steam {
+  animation: steam-float 2.5s infinite ease-in-out;
+}
+.steam-2 { animation-delay: 0.5s; }
+.steam-3 { animation-delay: 1s; }
+
+@keyframes steam-float {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(-4px); opacity: 0.9; }
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-devanagari {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--sindoor);
+  letter-spacing: 0.5px;
+}
+
+.brand-sub {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--wood-brown);
+  opacity: 0.8;
+  margin-top: 2px;
+}
+
+/* Nav Menu Desktop */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: nowrap;
+}
+
+.nav-link {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--wood-brown);
+  transition: color 0.2s ease, transform 0.2s ease;
+  position: relative;
+  padding: 0.35rem 0.25rem;
+  white-space: nowrap;
+  letter-spacing: 0.2px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--haldi);
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover {
+  color: var(--sindoor);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.highlight-link {
+  color: var(--sindoor);
+  font-weight: 700;
+  background: rgba(217, 154, 39, 0.15);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--haldi);
+}
+
+.nav-link.highlight-link:hover {
+  background: var(--haldi);
+  color: var(--wood-dark);
+}
+
+/* Header Actions */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Ambient Sound Toggle */
+.sound-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(74, 48, 36, 0.07);
+  border: 1px solid rgba(74, 48, 36, 0.14);
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--wood-brown);
+  transition: all 0.2s ease;
+}
+
+.sound-toggle-btn:hover {
+  background: rgba(74, 48, 36, 0.12);
+}
+
+.sound-toggle-btn.playing {
+  background: rgba(101, 112, 82, 0.18);
+  border-color: var(--muted-green);
+  color: var(--muted-green);
+}
+
+.sound-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #aaa;
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.sound-toggle-btn.playing .sound-status-dot {
+  background: #22c55e;
+  box-shadow: 0 0 6px #22c55e;
+  animation: pulse-dot 1.5s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+
+/* Tiffin Cart Button */
+.tiffin-cart-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--sindoor);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(139, 48, 40, 0.28);
+  transition: all 0.2s ease;
+}
+
+.tiffin-cart-btn:hover {
+  background: var(--sindoor-light);
+  transform: translateY(-1px);
+}
+
+.tiffin-badge {
+  background: var(--haldi);
+  color: var(--wood-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 12px;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Mobile Hamburger Button */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  padding: 0;
+}
+
+.mobile-menu-btn span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: var(--wood-brown);
+  border-radius: 2px;
+  transition: all 0.25s ease;
+}
+
+/* Mobile Drawer */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100%;
+  background: var(--warm-cream-light);
+  border-left: 2px solid rgba(74, 48, 36, 0.15);
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  transition: right 0.35s ease;
+}
+
+.mobile-drawer.open {
+  right: 0;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed rgba(74, 48, 36, 0.2);
+}
+
+.drawer-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--sindoor);
+}
+
+.drawer-close-btn {
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--wood-brown);
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.mobile-link {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--wood-brown);
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: background 0.2s;
+}
+
+.mobile-link:hover {
+  background: rgba(217, 154, 39, 0.15);
+  color: var(--sindoor);
+}
+
+.mobile-drawer-footer {
+  margin-top: auto;
+}
+
+.drawer-tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.88rem;
+  letter-spacing: 0.4px;
+  color: var(--sindoor);
+  margin-bottom: 1.25rem;
+  text-align: center;
+  line-height: 1.45;
+  padding: 0.4rem 0.85rem;
+  background: rgba(217, 154, 39, 0.12);
+  border-radius: var(--radius-full);
+  border: 1px dashed rgba(217, 154, 39, 0.35);
+  display: block;
+}
+
+/* =========================================================
+   BUTTONS & ACCENTS
+   ========================================================= */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: var(--sindoor);
+  color: #FFFDF9;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--sindoor-dark);
+  box-shadow: 0 4px 12px rgba(139, 48, 40, 0.25);
+  transition: all 0.25s ease;
+  letter-spacing: 0.3px;
+}
+
+.btn-primary:hover {
+  background: var(--sindoor-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(139, 48, 40, 0.32);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: var(--paper-white);
+  color: var(--wood-brown);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--haldi);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--haldi);
+  color: var(--wood-dark);
+  transform: translateY(-2px);
+}
+
+.mini-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  border-radius: var(--radius-sm);
+}
+
+.handwritten-eyebrow {
+  font-family: var(--font-handwritten);
+  font-size: 1.6rem;
+  color: var(--sindoor);
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  color: var(--wood-brown);
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+}
+
+.section-desc {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: rgba(74, 48, 36, 0.8);
+}
+
+/* =========================================================
+   HERO SECTION: GHAR KA TABLE
+   ========================================================= */
+
+.hero-section {
+  position: relative;
+  padding: 4.5rem 0 3.5rem;
+  background: 
+    radial-gradient(ellipse at 80% 20%, rgba(217, 154, 39, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 70%, rgba(139, 48, 40, 0.08) 0%, transparent 50%),
+    var(--warm-cream);
+  overflow: hidden;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(217, 154, 39, 0.18);
+  color: var(--wood-dark);
+  border: 1px dashed var(--haldi);
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 1.25rem;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4.5vw, 3.8rem);
+  line-height: 1.1;
+  color: var(--wood-brown);
+  margin-bottom: 1.25rem;
+}
+
+.hero-highlight {
+  color: var(--sindoor);
+  position: relative;
+  display: inline-block;
+}
+
+.hero-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: rgba(217, 154, 39, 0.3);
+  z-index: -1;
+  border-radius: 4px;
+  transform: rotate(-1deg);
+}
+
+.hero-subtitle {
+  font-size: 1.12rem;
+  color: rgba(74, 48, 36, 0.85);
+  margin-bottom: 2rem;
+  max-width: 520px;
+  line-height: 1.65;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.hero-pledge {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.85rem 1.2rem;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(74, 48, 36, 0.12);
+  border-radius: var(--radius-md);
+  max-width: 500px;
+  box-shadow: var(--shadow-sm);
+}
+
+.pledge-heart {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.pledge-text {
+  font-size: 0.85rem;
+  color: var(--wood-brown);
+  line-height: 1.45;
+}
+
+.pledge-text strong {
+  display: block;
+  color: var(--sindoor);
+  margin-bottom: 2px;
+}
+
+/* Hero Visual: Polaroid Stack on Tablecloth */
+.hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.table-frame {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 1/1.1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.polaroid-main {
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  padding: 14px 14px 22px 14px;
+  box-shadow: var(--shadow-lg), 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 2px;
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease;
+  width: 85%;
+}
+
+.polaroid-main:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.tape-strip {
+  position: absolute;
+  top: -12px;
+  left: 35%;
+  width: 80px;
+  height: 24px;
+  background: rgba(235, 222, 195, 0.85);
+  border-left: 2px dashed rgba(0,0,0,0.06);
+  border-right: 2px dashed rgba(0,0,0,0.06);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  transform: rotate(3deg);
+  z-index: 10;
+}
+
+.photo-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  aspect-ratio: 4/3.3;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.1) contrast(1.03);
+}
+
+.dish-tag-float {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(36, 24, 20, 0.85);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+}
+
+.polaroid-caption {
+  margin-top: 14px;
+  text-align: center;
+}
+
+.caption-handwritten {
+  font-family: var(--font-handwritten);
+  font-size: 1.35rem;
+  color: var(--wood-brown);
+  font-weight: 700;
+}
+
+/* Floating Sticky Notes */
+.floating-note {
+  position: absolute;
+  background: #FFF9D2;
+  padding: 0.85rem 1rem;
+  border-radius: 2px;
+  box-shadow: var(--shadow-md);
+  font-family: var(--font-handwritten);
+  font-size: 1.15rem;
+  line-height: 1.3;
+  color: var(--sindoor-dark);
+  z-index: 3;
+  transition: transform 0.25s ease;
+}
+
+.floating-note:hover {
+  transform: scale(1.05) rotate(0deg) !important;
+}
+
+.note-1 {
+  bottom: -10px;
+  left: -20px;
+  max-width: 200px;
+  transform: rotate(-6deg);
+  border-top: 2px solid rgba(217, 154, 39, 0.4);
+}
+
+.note-tape {
+  position: absolute;
+  top: -8px;
+  left: 20px;
+  width: 40px;
+  height: 16px;
+  background: rgba(220, 200, 160, 0.7);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.note-2 {
+  top: 15px;
+  right: -25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #FFF5EC;
+  border: 1px dashed var(--sindoor);
+  transform: rotate(5deg);
+  padding: 0.6rem 0.9rem;
+}
+
+.chai-sticker {
+  font-size: 1.4rem;
+}
+
+.note-bold {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--sindoor);
+}
+
+.note-detail {
+  font-size: 0.85rem;
+  color: var(--wood-brown);
+}
+
+/* Retro Marquee Ribbon */
+.retro-ribbon {
+  margin-top: 3.5rem;
+  background: var(--sindoor);
+  color: var(--warm-cream);
+  padding: 0.75rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.ribbon-track {
+  display: inline-flex;
+  gap: 2rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  animation: marquee-track 30s linear infinite;
+}
+
+.ribbon-track .star {
+  color: var(--haldi);
+}
+
+@keyframes marquee-track {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* =========================================================
+   INTERACTION 1: AAJ KYA BAN RAHA HAI? (DAILY MENU)
+   ========================================================= */
+
+.menu-section {
+  background: var(--warm-cream-light);
+  position: relative;
+}
+
+.menu-filters-wrapper {
+  margin: 2.5rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.filter-pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+  background: rgba(74, 48, 36, 0.06);
+  padding: 0.45rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(74, 48, 36, 0.12);
+}
+
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--wood-brown);
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  color: var(--sindoor);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.filter-btn.active {
+  background: var(--sindoor);
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(139, 48, 40, 0.3);
+}
+
+/* Time Filter Chips */
+.time-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.time-label {
+  font-weight: 700;
+  color: var(--wood-brown);
+  margin-right: 0.25rem;
+}
+
+.time-chip {
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-full);
+  background: var(--paper-white);
+  border: 1px solid rgba(74, 48, 36, 0.18);
+  color: var(--wood-brown);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+}
+
+.time-chip:hover {
+  border-color: var(--haldi);
+}
+
+.time-chip.active {
+  background: var(--haldi);
+  color: var(--wood-dark);
+  font-weight: 600;
+  border-color: var(--haldi-dark);
+}
+
+/* Dishes Grid */
+.dishes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.75rem;
+}
+
+.dish-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(74, 48, 36, 0.12);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+
+.dish-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.dish-card-img-wrap {
+  position: relative;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: #eee;
+}
+
+.dish-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.dish-card:hover .dish-card-img {
+  transform: scale(1.05);
+}
+
+.dish-card-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dish-card-badge.veg {
+  color: #15803d;
+  border-color: #86efac;
+}
+
+.dish-card-badge.non-veg {
+  color: #b91c1c;
+  border-color: #fca5a5;
+}
+
+.dish-special-stamp {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--haldi);
+  color: var(--wood-dark);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 12px;
+  letter-spacing: 0.5px;
+}
+
+.dish-card-body {
+  padding: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.dish-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.35rem;
+}
+
+.dish-card-title {
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  color: var(--wood-brown);
+  line-height: 1.25;
+}
+
+.dish-card-hindi {
+  display: block;
+  font-family: var(--font-devanagari-hand);
+  font-size: 0.9rem;
+  color: var(--sindoor);
+  margin-top: 1px;
+}
+
+.dish-card-price {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--sindoor);
+}
+
+.dish-card-desc {
+  font-size: 0.88rem;
+  color: rgba(74, 48, 36, 0.78);
+  line-height: 1.45;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.dish-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  border-top: 1px dashed rgba(74, 48, 36, 0.15);
+}
+
+.spice-meter {
+  font-size: 0.8rem;
+  color: var(--wood-brown);
+}
+
+.btn-add-dish {
+  background: rgba(217, 154, 39, 0.15);
+  color: var(--wood-brown);
+  border: 1px solid var(--haldi);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.82rem;
+  transition: all 0.2s;
+}
+
+.btn-add-dish:hover {
+  background: var(--sindoor);
+  color: #fff;
+  border-color: var(--sindoor-dark);
+}
+
+.menu-bottom-badge {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 0.92rem;
+  color: var(--wood-brown);
+  font-family: var(--font-handwritten);
+  font-size: 1.35rem;
+}
+
+/* =========================================================
+   SECTION 2: NANI KE HAATH SE (EMOTIONAL CENTERPIECE)
+   ========================================================= */
+
+.nani-section {
+  background: var(--warm-cream);
+  position: relative;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(139, 48, 40, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(217, 154, 39, 0.08) 0%, transparent 40%);
+}
+
+.nani-header-box {
+  max-width: 760px;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.nani-stamp {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+.stamp-circle {
+  border: 2px dashed var(--sindoor);
+  color: var(--sindoor);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transform: rotate(-3deg);
+  display: inline-block;
+}
+
+.nani-lead-quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--wood-brown);
+  line-height: 1.6;
+  margin-top: 0.75rem;
+}
+
+.nani-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  padding: 1rem 0;
+}
+
+.recipe-polaroid {
+  background: #FFFDF9;
+  border: 1px solid rgba(74, 48, 36, 0.15);
+  box-shadow: var(--shadow-md);
+  padding: 16px 16px 24px;
+  border-radius: 3px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe-polaroid.tilted-right {
+  transform: rotate(1.5deg);
+}
+
+.recipe-polaroid.tilted-left {
+  transform: rotate(-1.5deg);
+}
+
+.recipe-polaroid:hover {
+  transform: rotate(0deg) translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  z-index: 5;
+}
+
+.polaroid-pin {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.4rem;
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.25));
+  z-index: 10;
+}
+
+.polaroid-tape {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  width: 60px;
+  height: 20px;
+  background: rgba(230, 215, 185, 0.8);
+  border-left: 1px dashed rgba(0,0,0,0.1);
+  border-right: 1px dashed rgba(0,0,0,0.1);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  transform: rotate(12deg);
+}
+
+.polaroid-photo {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: #f1ede3;
+  margin-bottom: 1.25rem;
+  border-radius: 2px;
+}
+
+.polaroid-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.recipe-polaroid:hover .polaroid-photo img {
+  transform: scale(1.04);
+}
+
+.diet-tag {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.diet-tag.veg { color: #166534; }
+
+.polaroid-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+.recipe-name {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  color: var(--sindoor);
+}
+
+.recipe-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--haldi-dark);
+}
+
+.recipe-desc {
+  font-size: 0.9rem;
+  color: rgba(74, 48, 36, 0.85);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+/* Handwritten Sticky Note Annotation */
+.polaroid-sticky-note {
+  position: relative;
+  background: #FFF9D2;
+  border: 1px solid rgba(217, 154, 39, 0.35);
+  padding: 0.85rem 1rem 0.85rem 1.8rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  margin-bottom: 1.5rem;
+}
+
+.sticky-pin {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 0.9rem;
+}
+
+.handwritten-note {
+  font-family: var(--font-handwritten);
+  font-size: 1.25rem;
+  color: var(--sindoor);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.btn-recipe-story {
+  flex: 1;
+  background: transparent;
+  color: var(--wood-brown);
+  border: 1.5px solid rgba(74, 48, 36, 0.25);
+  padding: 0.6rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-recipe-story:hover {
+  background: rgba(74, 48, 36, 0.08);
+  border-color: var(--wood-brown);
+}
+
+.btn-card-add {
+  flex: 1;
+  background: var(--haldi);
+  color: var(--wood-dark);
+  font-weight: 700;
+  padding: 0.6rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.btn-card-add:hover {
+  background: var(--sindoor);
+  color: #fff;
+}
+
+/* =========================================================
+   SECTION 3: CHAI PE CHARCHA (CAFÉ & MOOD MATCHER)
+   ========================================================= */
+
+.chai-section {
+  background: #F4E8D3;
+  position: relative;
+}
+
+.chai-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* Vintage Wooden Café Board */
+.chai-menu-board {
+  position: relative;
+}
+
+.board-frame {
+  background: var(--wood-brown);
+  color: var(--warm-cream);
+  padding: 2rem 1.75rem;
+  border-radius: var(--radius-md);
+  border: 4px solid var(--wood-dark);
+  box-shadow: var(--shadow-lg), inset 0 0 40px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+.board-frame::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed rgba(247, 238, 220, 0.35);
+  border-radius: calc(var(--radius-md) - 4px);
+  pointer-events: none;
+}
+
+.board-header {
+  text-align: center;
+  border-bottom: 1px solid rgba(247, 238, 220, 0.2);
+  padding-bottom: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.board-icon {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.board-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  letter-spacing: 1px;
+  color: var(--haldi);
+}
+
+.board-sub {
+  font-size: 0.78rem;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+.board-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.board-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px dotted rgba(247, 238, 220, 0.18);
+}
+
+.board-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.item-name {
+  display: block;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.item-desc {
+  display: block;
+  font-size: 0.78rem;
+  color: rgba(247, 238, 220, 0.7);
+}
+
+.item-price {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--haldi);
+}
+
+.mini-add-btn {
+  background: rgba(217, 154, 39, 0.25);
+  color: var(--haldi);
+  border: 1px solid var(--haldi);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.mini-add-btn:hover {
+  background: var(--haldi);
+  color: var(--wood-dark);
+  transform: scale(1.1);
+}
+
+.board-footer-note {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-family: var(--font-handwritten);
+  font-size: 1.25rem;
+  color: var(--haldi-light);
+}
+
+/* Interactive Mood Recommender Card */
+.chai-recommender-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  border: 1.5px solid rgba(74, 48, 36, 0.15);
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.rec-badge {
+  display: inline-block;
+  background: rgba(139, 48, 40, 0.12);
+  color: var(--sindoor);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  letter-spacing: 1px;
+  margin-bottom: 0.75rem;
+}
+
+.rec-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--wood-brown);
+  margin-bottom: 0.45rem;
+}
+
+.rec-instruction {
+  font-size: 0.95rem;
+  color: rgba(74, 48, 36, 0.8);
+  margin-bottom: 1.75rem;
+}
+
+.mood-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+  margin-bottom: 1.75rem;
+}
+
+.mood-btn {
+  background: var(--paper-white);
+  border: 1.5px solid rgba(74, 48, 36, 0.14);
+  padding: 1rem 0.85rem;
+  border-radius: var(--radius-md);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  transition: all 0.25s ease;
+}
+
+.mood-btn:hover {
+  border-color: var(--haldi);
+  background: #FFFDF5;
+  transform: translateY(-2px);
+}
+
+.mood-btn.active {
+  border-color: var(--sindoor);
+  background: rgba(139, 48, 40, 0.08);
+  box-shadow: 0 4px 12px rgba(139, 48, 40, 0.12);
+}
+
+.mood-emoji {
+  font-size: 1.6rem;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+
+.mood-text {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--wood-brown);
+}
+
+.mood-btn.active .mood-text {
+  color: var(--sindoor);
+}
+
+.mood-sub {
+  font-size: 0.75rem;
+  color: rgba(74, 48, 36, 0.65);
+}
+
+/* Recommendation Result Box */
+.recommendation-result {
+  background: #FFF9EE;
+  border: 2px dashed var(--haldi);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.result-placeholder {
+  text-align: center;
+  color: rgba(74, 48, 36, 0.6);
+  font-size: 0.95rem;
+}
+
+.placeholder-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.result-active-card {
+  width: 100%;
+  animation: fadeInPop 0.35s ease;
+}
+
+@keyframes fadeInPop {
+  0% { opacity: 0; transform: scale(0.96); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.rec-combo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+
+.rec-pairing-tag {
+  font-family: var(--font-handwritten);
+  font-size: 1.4rem;
+  color: var(--sindoor);
+  font-weight: 700;
+}
+
+.rec-total-price {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--wood-brown);
+}
+
+.rec-items-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  background: #fff;
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(74, 48, 36, 0.1);
+  margin-bottom: 1rem;
+}
+
+.rec-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.rec-item-emoji {
+  font-size: 1.8rem;
+}
+
+.rec-item-name {
+  font-weight: 600;
+  font-size: 0.92rem;
+  display: block;
+  color: var(--wood-brown);
+}
+
+.rec-item-desc {
+  font-size: 0.75rem;
+  color: rgba(74, 48, 36, 0.65);
+}
+
+.rec-reason-note {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: rgba(74, 48, 36, 0.85);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.btn-add-combo {
+  background: var(--sindoor);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-sm);
+  width: 100%;
+  transition: background 0.2s;
+}
+
+.btn-add-combo:hover {
+  background: var(--sindoor-light);
+}
+
+/* =========================================================
+   INTERACTION 3: APNI THAALI BANAO (STAINLESS STEEL PLATE)
+   ========================================================= */
+
+.thali-section {
+  background: var(--warm-cream-light);
+  position: relative;
+}
+
+.thali-builder-container {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  margin-top: 2.5rem;
+}
+
+/* Steps Panel */
+.thali-steps-panel {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid rgba(74, 48, 36, 0.12);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+/* Step Navigation Tabs */
+.thali-step-pills {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+  border-bottom: 1px solid rgba(74, 48, 36, 0.12);
+  padding-bottom: 0.85rem;
+}
+
+.thali-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgba(74, 48, 36, 0.65);
+  transition: all 0.2s ease;
+}
+
+.thali-tab:hover {
+  background: rgba(74, 48, 36, 0.05);
+  color: var(--wood-brown);
+}
+
+.thali-tab.active {
+  background: var(--sindoor);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(139, 48, 40, 0.25);
+}
+
+.step-num {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+.thali-tab.active .step-num {
+  background: #fff;
+  color: var(--sindoor);
+}
+
+/* Step Panes */
+.step-pane {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.step-pane.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pane-headline {
+  margin-bottom: 1.25rem;
+}
+
+.pane-headline h4 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--wood-brown);
+}
+
+.pane-hint {
+  font-size: 0.85rem;
+  color: rgba(74, 48, 36, 0.65);
+}
+
+.option-cards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.thali-option-card {
+  cursor: pointer;
+  display: block;
+}
+
+.thali-option-card input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card-inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.15rem;
+  background: var(--paper-white);
+  border: 1.5px solid rgba(74, 48, 36, 0.15);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+}
+
+.thali-option-card:hover .card-inner {
+  border-color: var(--haldi);
+  background: #FFFDF6;
+  transform: translateX(3px);
+}
+
+.thali-option-card input:checked + .card-inner {
+  border-color: var(--sindoor);
+  background: rgba(139, 48, 40, 0.06);
+  box-shadow: 0 2px 8px rgba(139, 48, 40, 0.12);
+}
+
+.opt-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.opt-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.opt-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--wood-brown);
+}
+
+.thali-option-card input:checked + .card-inner .opt-name {
+  color: var(--sindoor);
+}
+
+.opt-sub {
+  font-size: 0.78rem;
+  color: rgba(74, 48, 36, 0.7);
+}
+
+/* Thali Nav Controls */
+.thali-nav-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(74, 48, 36, 0.12);
+}
+
+.btn-step-nav {
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--wood-brown);
+  border: 1.5px solid rgba(74, 48, 36, 0.2);
+  transition: all 0.2s;
+}
+
+.btn-step-nav:hover:not(:disabled) {
+  background: rgba(74, 48, 36, 0.08);
+}
+
+.btn-step-nav:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   LIVE VISUAL STAINLESS STEEL THAALI
+   ========================================================= */
+
+.thali-visual-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.steel-plate-wrapper {
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Authentic Round Stainless Steel Plate */
+.steel-thali {
+  width: 96%;
+  height: 96%;
+  border-radius: 50%;
+  position: relative;
+  background: 
+    radial-gradient(ellipse at 35% 30%, #ffffff 0%, #e2e8f0 35%, #cbd5e1 65%, #94a3b8 95%);
+  box-shadow: 
+    0 16px 36px rgba(74, 48, 36, 0.25),
+    inset 0 4px 10px rgba(255, 255, 255, 0.9),
+    inset 0 -6px 14px rgba(0, 0, 0, 0.35);
+  border: 6px solid #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Inner Rim Ring */
+.thali-rim {
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(148, 163, 184, 0.6);
+  box-shadow: 
+    inset 0 2px 6px rgba(0, 0, 0, 0.2),
+    0 2px 4px rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+}
+
+.thali-engraving {
+  position: absolute;
+  top: 24px;
+  font-size: 0.62rem;
+  letter-spacing: 2.5px;
+  font-weight: 700;
+  color: rgba(71, 85, 105, 0.65);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+}
+
+/* Center of Thaali: Roti & Rice */
+.thali-center-hub {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+}
+
+.dish-bread {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(8px);
+}
+
+.bread-icon-wrapper {
+  position: relative;
+}
+
+.bread-icon {
+  font-size: 3.5rem;
+  line-height: 1;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.18));
+}
+
+.steam-roti {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  color: rgba(139, 48, 40, 0.6);
+  animation: steam-float 2s infinite ease-in-out;
+}
+
+.dish-rice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(-8px);
+}
+
+.rice-pile {
+  font-size: 2.5rem;
+  line-height: 1;
+  filter: drop-shadow(0 3px 5px rgba(0,0,0,0.15));
+}
+
+.dish-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--wood-brown);
+  background: rgba(255, 255, 255, 0.85);
+  padding: 1px 6px;
+  border-radius: 4px;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  white-space: nowrap;
+}
+
+/* Metallic Katoris (Bowls) */
+.steel-katori {
+  position: absolute;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: 
+    radial-gradient(circle at 35% 30%, #ffffff 0%, #cbd5e1 45%, #64748b 90%);
+  box-shadow: 
+    0 4px 10px rgba(0, 0, 0, 0.28),
+    inset 0 3px 6px rgba(255, 255, 255, 0.9),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.4);
+  border: 3px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+  z-index: 5;
+}
+
+.steel-katori:hover {
+  transform: scale(1.08);
+}
+
+/* Inner food layer */
+.katori-inner {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 3px 6px rgba(0,0,0,0.3);
+  transition: background 0.4s ease;
+}
+
+.katori-emoji {
+  font-size: 1.6rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
+}
+
+.katori-badge {
+  position: absolute;
+  bottom: -18px;
+  background: var(--card-bg);
+  border: 1px solid rgba(74, 48, 36, 0.15);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--wood-brown);
+  padding: 1px 6px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Placements on circle */
+.katori-1 { top: 38px; left: 38px; } /* Sabzi */
+.katori-2 { top: 38px; right: 38px; } /* Dal */
+.katori-3 { bottom: 38px; right: 38px; } /* Side / Salad */
+.katori-4 { bottom: 38px; left: 38px; } /* Sweet */
+
+/* Thali Order Bar */
+.thali-order-bar {
+  width: 100%;
+  max-width: 460px;
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  border: 1.5px solid rgba(74, 48, 36, 0.15);
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: var(--shadow-md);
+}
+
+.summary-eyebrow {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--sindoor);
+  font-weight: 700;
+  display: block;
+}
+
+.thali-name-preview {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  color: var(--wood-brown);
+  line-height: 1.2;
+  margin: 2px 0 4px;
+}
+
+.thali-price-tag {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.price-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(74, 48, 36, 0.65);
+}
+
+.price-amount {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--sindoor);
+}
+
+.btn-add-thali {
+  padding: 0.75rem 1.25rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   SECTION 5: GHAR JAISA KYUN? (EMOTIONAL STORY)
+   ========================================================= */
+
+.story-section {
+  background: var(--warm-cream);
+  position: relative;
+}
+
+.story-card-wrapper {
+  background: #FFFDF8;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(74, 48, 36, 0.15);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.tablecloth-card-border {
+  height: 12px;
+  width: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--haldi),
+    var(--haldi) 12px,
+    var(--sindoor) 12px,
+    var(--sindoor) 24px
+  );
+}
+
+.story-inner-content {
+  padding: 4rem 3rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.story-divider-line {
+  width: 60px;
+  height: 3px;
+  background: var(--haldi);
+  margin: 0.85rem auto 2rem;
+  border-radius: 2px;
+}
+
+.story-highlight-quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  color: var(--sindoor);
+  margin-bottom: 1.25rem;
+}
+
+.story-body-text {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: var(--wood-brown);
+  font-family: var(--font-serif);
+  margin-bottom: 1.75rem;
+}
+
+.story-sub-text {
+  font-size: 1rem;
+  color: rgba(74, 48, 36, 0.8);
+  line-height: 1.7;
+  max-width: 720px;
+  margin: 0 auto 3rem;
+}
+
+/* Three Core Pillars */
+.story-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+  text-align: left;
+}
+
+.pillar-box {
+  background: var(--paper-white);
+  padding: 1.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(74, 48, 36, 0.1);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s;
+}
+
+.pillar-box:hover {
+  transform: translateY(-3px);
+  border-color: var(--haldi);
+}
+
+.pillar-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.pillar-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--wood-brown);
+  margin-bottom: 0.5rem;
+}
+
+.pillar-desc {
+  font-size: 0.88rem;
+  color: rgba(74, 48, 36, 0.75);
+  line-height: 1.55;
+}
+
+.story-signature {
+  text-align: center;
+  border-top: 1px dashed rgba(74, 48, 36, 0.15);
+  padding-top: 2rem;
+}
+
+.signature-text {
+  font-family: var(--font-handwritten);
+  font-size: 1.5rem;
+  color: var(--wood-brown);
+}
+
+.signature-brand {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--sindoor);
+  display: block;
+  margin-top: 0.25rem;
+}
+
+/* =========================================================
+   SECTION 6: MILTE HAIN? (LOCATION & CONTACT)
+   ========================================================= */
+
+.location-section {
+  background: var(--warm-cream-light);
+  position: relative;
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.location-badge {
+  display: inline-block;
+  background: rgba(101, 112, 82, 0.15);
+  color: var(--muted-green);
+  border: 1px dashed var(--muted-green);
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 1.25rem;
+}
+
+.location-sub {
+  font-size: 1.05rem;
+  color: rgba(74, 48, 36, 0.8);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.info-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.25rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.info-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.info-item strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--wood-brown);
+}
+
+.info-item p {
+  font-size: 0.9rem;
+  color: rgba(74, 48, 36, 0.75);
+  margin-top: 2px;
+}
+
+.location-action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Visual Neighborhood Postcard / Sketch */
+.postcard-frame {
+  background: #FFFDF7;
+  padding: 1.75rem;
+  border-radius: 4px;
+  border: 1.5px solid rgba(74, 48, 36, 0.18);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  transform: rotate(1deg);
+}
+
+.postcard-stamp-corner {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.delhi-stamp {
+  border: 2px dashed var(--sindoor);
+  color: var(--sindoor);
+  padding: 6px 10px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.cafe-sketch-illustration {
+  background: #F4EADA;
+  border-radius: var(--radius-sm);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(74, 48, 36, 0.1);
+}
+
+.cafe-signboard {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  color: var(--sindoor);
+  letter-spacing: 1px;
+}
+
+.chalkboard-quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  letter-spacing: 0.4px;
+  color: var(--sindoor);
+  margin: 0.4rem 0 1.25rem;
+  opacity: 0.9;
+}
+
+.chai-stall-visual {
+  background: var(--paper-white);
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--haldi);
+}
+
+.tapri-counter {
+  font-size: 1.6rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.postcard-handwriting {
+  font-family: var(--font-handwritten);
+  font-size: 1.35rem;
+  color: var(--wood-brown);
+  line-height: 1.35;
+}
+
+.written-by {
+  display: block;
+  text-align: right;
+  font-size: 1.1rem;
+  color: var(--sindoor);
+  margin-top: 0.5rem;
+}
+
+/* =========================================================
+   SLEEK MINIMAL & AESTHETIC FOOTER
+   ========================================================= */
+
+.main-footer {
+  background: #190F0A;
+  color: var(--warm-cream);
+  position: relative;
+  border-top: 1px solid rgba(217, 154, 39, 0.2);
+}
+
+.footer-top-accent {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--haldi) 30%, var(--sindoor-light) 70%, transparent);
+  opacity: 0.8;
+}
+
+.footer-compact-container {
+  padding: 1.1rem 1.25rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+}
+
+.footer-brand-badge {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--haldi);
+  line-height: 1;
+  letter-spacing: 0.5px;
+}
+
+.footer-tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.78rem;
+  letter-spacing: 0.3px;
+  color: var(--warm-cream-light);
+  opacity: 0.85;
+  padding: 0.15rem 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 2px solid var(--haldi);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.footer-links-inline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.65rem;
+}
+
+.f-link {
+  font-size: 0.82rem;
+  color: rgba(247, 238, 220, 0.75);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.f-link:hover {
+  color: var(--haldi-light);
+}
+
+.f-contact-link {
+  color: var(--haldi);
+  font-weight: 600;
+}
+
+.f-dot {
+  font-size: 0.55rem;
+  color: rgba(247, 238, 220, 0.25);
+}
+
+.footer-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid rgba(247, 238, 220, 0.08);
+  font-size: 0.78rem;
+  color: rgba(247, 238, 220, 0.55);
+}
+
+.footer-curated {
+  color: var(--warm-cream-light);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 500;
+}
+
+/* Heartbeat Pulsing Keyframe Animation */
+@keyframes heartbeat {
+  0% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(239, 68, 68, 0.4)); }
+  14% { transform: scale(1.32); filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.85)); }
+  28% { transform: scale(1); filter: drop-shadow(0 0 3px rgba(239, 68, 68, 0.4)); }
+  42% { transform: scale(1.28); filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.9)); }
+  70% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(239, 68, 68, 0.3)); }
+  100% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(239, 68, 68, 0.3)); }
+}
+
+.animated-heart {
+  display: inline-block;
+  color: #ef4444;
+  animation: heartbeat 1.35s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  transform-origin: center;
+  font-size: 0.95rem;
+  margin: 0 2px;
+  vertical-align: middle;
+}
+
+/* =========================================================
+   CART DRAWER (MERA TIFFIN DABBA)
+   ========================================================= */
+
+.cart-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(42, 26, 18, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.cart-drawer-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: -450px;
+  width: 100%;
+  max-width: 420px;
+  height: 100%;
+  background: var(--warm-cream-light);
+  box-shadow: var(--shadow-lg);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cart-drawer.active {
+  right: 0;
+}
+
+.cart-drawer-header {
+  background: var(--sindoor);
+  color: #fff;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tiffin-header-branding {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.tiffin-stack-icon {
+  font-size: 2rem;
+}
+
+.tiffin-drawer-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.1;
+}
+
+.tiffin-subtitle {
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+.cart-close-btn {
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.cart-items-body {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.empty-cart-state {
+  margin: auto;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.empty-tiffin-ill {
+  font-size: 3.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.empty-cart-state h4 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--wood-brown);
+  margin-bottom: 0.35rem;
+}
+
+.empty-cart-state p {
+  font-size: 0.9rem;
+  color: rgba(74, 48, 36, 0.75);
+  margin-bottom: 1.25rem;
+}
+
+/* Cart Item Card */
+.cart-item-card {
+  background: #fff;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(74, 48, 36, 0.12);
+  padding: 0.9rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+.cart-item-info {
+  flex-grow: 1;
+  padding-right: 0.75rem;
+}
+
+.cart-item-title {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--wood-brown);
+  display: block;
+}
+
+.cart-item-note {
+  font-size: 0.75rem;
+  color: rgba(74, 48, 36, 0.65);
+}
+
+.cart-item-price {
+  font-weight: 700;
+  color: var(--sindoor);
+  font-size: 0.95rem;
+  margin-top: 3px;
+  display: block;
+}
+
+.cart-qty-ctrl {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(74, 48, 36, 0.06);
+  border-radius: var(--radius-full);
+  padding: 2px 6px;
+}
+
+.qty-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #fff;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: var(--wood-brown);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.qty-display {
+  font-size: 0.85rem;
+  font-weight: 700;
+  min-width: 16px;
+  text-align: center;
+}
+
+/* Cart Footer */
+.cart-footer {
+  background: #fff;
+  border-top: 1px solid rgba(74, 48, 36, 0.14);
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.05);
+}
+
+.cart-bill-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.bill-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: rgba(74, 48, 36, 0.8);
+}
+
+.sweet-row {
+  color: var(--sindoor);
+  font-weight: 600;
+}
+
+.free-tag {
+  background: rgba(139, 48, 40, 0.1);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.bill-divider {
+  height: 1px;
+  background: rgba(74, 48, 36, 0.12);
+  margin: 0.35rem 0;
+}
+
+.total-row {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--wood-brown);
+}
+
+.total-row span:last-child {
+  color: var(--sindoor);
+}
+
+.cart-actions-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.checkout-btn {
+  font-size: 0.82rem;
+  padding: 0.8rem;
+}
+
+.print-receipt-btn {
+  padding: 0.65rem;
+  font-size: 0.85rem;
+}
+
+/* =========================================================
+   MODALS (RECIPES, BOOKING, RECEIPT)
+   ========================================================= */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(42, 26, 18, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  width: 100%;
+  animation: modalPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalPop {
+  0% { opacity: 0; transform: scale(0.92) translateY(12px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-close-icon {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  font-size: 1.8rem;
+  color: var(--wood-brown);
+  line-height: 1;
+  z-index: 10;
+}
+
+/* Recipe Story Modal */
+.vintage-paper-modal {
+  max-width: 580px;
+  background: #FFFDF7;
+  border: 2px solid rgba(74, 48, 36, 0.15);
+  padding: 2.25rem;
+  position: relative;
+}
+
+.recipe-modal-header {
+  border-bottom: 1px dashed rgba(74, 48, 36, 0.2);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.recipe-modal-eyebrow {
+  font-family: var(--font-handwritten);
+  font-size: 1.35rem;
+  color: var(--sindoor);
+}
+
+.recipe-modal-title {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  color: var(--wood-brown);
+  margin-top: 2px;
+}
+
+.recipe-memory-box {
+  background: #FFF9E6;
+  border-left: 3px solid var(--haldi);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--wood-brown);
+}
+
+.recipe-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.75rem;
+  padding-left: 1.25rem;
+}
+
+.recipe-steps-list li {
+  font-size: 0.92rem;
+  color: rgba(74, 48, 36, 0.85);
+  line-height: 1.5;
+}
+
+.recipe-secret-tip {
+  background: rgba(139, 48, 40, 0.08);
+  border: 1px dashed var(--sindoor);
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-handwritten);
+  font-size: 1.3rem;
+  color: var(--sindoor);
+  margin-bottom: 1.5rem;
+}
+
+/* Booking Modal */
+.table-booking-modal {
+  max-width: 520px;
+  padding: 2.25rem;
+}
+
+.booking-header {
+  margin-bottom: 1.5rem;
+}
+
+.modal-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--haldi-dark);
+}
+
+.booking-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--wood-brown);
+}
+
+.booking-header p {
+  font-size: 0.9rem;
+  color: rgba(74, 48, 36, 0.75);
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--wood-brown);
+}
+
+.form-group input, .form-group select {
+  padding: 0.7rem 0.9rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid rgba(74, 48, 36, 0.2);
+  background: var(--paper-white);
+  font-size: 0.92rem;
+  color: var(--wood-brown);
+  font-family: inherit;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Vintage Parcha / Receipt Modal */
+.receipt-parcha-modal {
+  max-width: 420px;
+  background: #FFFDF2;
+  padding: 2rem 1.5rem;
+  border: 1px solid rgba(74, 48, 36, 0.2);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.parcha-paper {
+  position: relative;
+}
+
+.parcha-header {
+  text-align: center;
+  position: relative;
+}
+
+.parcha-stamp-red {
+  display: inline-block;
+  border: 2px solid #b91c1c;
+  color: #b91c1c;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  transform: rotate(-4deg);
+  margin-bottom: 0.45rem;
+}
+
+.parcha-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--wood-brown);
+}
+
+.parcha-addr {
+  font-size: 0.72rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.parcha-dotted {
+  font-size: 0.8rem;
+  color: #777;
+  overflow: hidden;
+  margin: 0.25rem 0;
+}
+
+.parcha-meta-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: #444;
+}
+
+.parcha-items {
+  margin: 0.75rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.parcha-item-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.parcha-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.15rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  color: var(--sindoor-dark);
+}
+
+.parcha-hand-note {
+  font-family: var(--font-handwritten);
+  font-size: 1.35rem;
+  text-align: center;
+  color: var(--sindoor);
+  margin: 0.75rem 0;
+}
+
+/* =========================================================
+   TOAST NOTIFICATION
+   ========================================================= */
+
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+.toast {
+  background: var(--wood-dark);
+  color: var(--warm-cream);
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  border-left: 4px solid var(--haldi);
+  animation: toastIn 0.3s ease forwards;
+  pointer-events: auto;
+  max-width: 340px;
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN (MOBILE & TABLET)
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .chai-layout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .thali-builder-container {
+    grid-template-columns: 1fr;
+  }
+
+  .location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .story-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .section-padding {
+    padding: 3.5rem 0;
+  }
+
+  .hero-section {
+    padding: 2.5rem 0 2rem;
+  }
+
+  .sound-label {
+    display: none;
+  }
+
+  .tiffin-text {
+    display: none;
+  }
+
+  .tiffin-cart-btn {
+    padding: 0.45rem 0.75rem;
+  }
+
+  .mood-selector-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rec-items-duo {
+    grid-template-columns: 1fr;
+  }
+
+  .steel-katori {
+    width: 76px;
+    height: 76px;
+  }
+
+  .katori-emoji {
+    font-size: 1.3rem;
+  }
+
+  .katori-1 { top: 22px; left: 22px; }
+  .katori-2 { top: 22px; right: 22px; }
+  .katori-3 { bottom: 22px; right: 22px; }
+  .katori-4 { bottom: 22px; left: 22px; }
+
+  .bread-icon {
+    font-size: 2.8rem;
+  }
+
+  .rice-pile {
+    font-size: 2rem;
+  }
+
+  .story-inner-content {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .footer-container {
+    padding: 1.25rem 1rem 1rem;
+    gap: 1rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.3rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+  }
+
+  .hero-cta-group .btn-primary,
+  .hero-cta-group .btn-secondary {
+    width: 100%;
+  }
+
+  .dishes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .thali-step-pills {
+    flex-wrap: wrap;
+  }
+
+  .thali-order-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-add-thali {
+    width: 100%;
+  }
+}

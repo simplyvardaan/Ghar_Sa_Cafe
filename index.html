@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>घर सा Café | Jahan khaana sirf khaana nahi, ghar ki yaad hai</title>
+  <meta name="description" content="A cozy Indian café/restaurant inspired by maa ke haath ka khaana, Sunday lunches, steel tiffins, old recipes, chai conversations, and family dining tables.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Kalam:wght@300;400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Rozha+One&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫖</text></svg>">
+</head>
+<body>
+  <!-- Tablecloth Accent Ribbon at Top -->
+  <div class="tablecloth-top-border"></div>
+
+  <!-- Announcement Ticker -->
+  <div class="top-announcement">
+    <div class="announcement-content">
+      <span>✨ Aaj ki taaza khabar: Aaj lunch mein Nani ke haath ke Rajma Chawal special ban rahe hain!</span>
+      <span class="dot">•</span>
+      <span>🫖 Subah ki pehli kadak adrak chai shuru ho chuki hai</span>
+      <span class="dot">•</span>
+      <span>❤️ Har bite mein maa ke haath ka pyaar, guaranteed</span>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="main-header" id="header">
+    <div class="header-container">
+      <a href="#hero" class="brand-logo" aria-label="Ghar Sa Cafe Home">
+        <div class="brand-icon">
+          <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" class="chai-cup-svg">
+            <ellipse cx="22" cy="38" rx="18" ry="4" fill="#4A3024" opacity="0.3"/>
+            <path d="M10 16H34V28C34 33 29 36 22 36C15 36 10 33 10 28V16Z" fill="#D99A27"/>
+            <path d="M12 16H32V27C32 31.5 28 34 22 34C16 34 12 31.5 12 27V16Z" fill="#8B3028"/>
+            <path d="M33 19H37C39 19 40 21 40 23C40 26 38 28 33 28" stroke="#4A3024" stroke-width="2.5" stroke-linecap="round"/>
+            <path class="steam steam-1" d="M17 12C16 9 18 7 17 4" stroke="#8B3028" stroke-width="2" stroke-linecap="round"/>
+            <path class="steam steam-2" d="M22 12C23 8 21 6 22 3" stroke="#D99A27" stroke-width="2" stroke-linecap="round"/>
+            <path class="steam steam-3" d="M27 12C26 9 28 7 27 4" stroke="#8B3028" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-devanagari">घर सा</span>
+          <span class="brand-sub">CAFÉ & KITCHEN</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#menu-section" class="nav-link">Menu</a>
+        <a href="#nani-recipes" class="nav-link">Nani's Rasoi</a>
+        <a href="#chai-charcha" class="nav-link">Chai Moods</a>
+        <a href="#thali-builder" class="nav-link highlight-link">Apni Thaali</a>
+        <a href="#why-ghar-sa" class="nav-link">Kahaani</a>
+        <a href="#location" class="nav-link">Location</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="header-actions">
+        <!-- Ambient Sound Toggle -->
+        <button id="soundToggleBtn" class="sound-toggle-btn" title="Toggle Cozy Kitchen Ambiance (Tadka & Chai simmer sound)" aria-label="Kitchen Sound Ambiance">
+          <span class="sound-icon">📻</span>
+          <span class="sound-label">Radio & Tadka</span>
+          <span class="sound-status-dot"></span>
+        </button>
+
+        <!-- Tiffin Cart Button -->
+        <button id="openCartBtn" class="tiffin-cart-btn" aria-label="Open My Tiffin Dabba">
+          <span class="tiffin-icon">🥘</span>
+          <span class="tiffin-text">Mera Tiffin</span>
+          <span id="cartCountBadge" class="tiffin-badge">0</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <span class="drawer-title">घर सा Navigation</span>
+      <button class="drawer-close-btn" id="closeDrawerBtn">&times;</button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="#menu-section" class="mobile-link">🍛 Aaj Kya Ban Raha Hai?</a>
+      <a href="#nani-recipes" class="mobile-link">👵 Nani Ke Haath Se</a>
+      <a href="#chai-charcha" class="mobile-link">🫖 Chai Pe Charcha</a>
+      <a href="#thali-builder" class="mobile-link">🍽️ Apni Thaali Banao</a>
+      <a href="#why-ghar-sa" class="mobile-link">❤️ Ghar Jaisa Kyun?</a>
+      <a href="#location" class="mobile-link">📍 Milte Hain?</a>
+    </nav>
+    <div class="mobile-drawer-footer">
+      <p class="drawer-tagline">“Jahan khaana sirf khaana nahi, ghar ki yaad hai.”</p>
+      <button class="btn-primary w-full" id="reserveTableMobileBtn">Table / Baithak Book Karo</button>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO SECTION: GHAR KA TABLE -->
+    <section class="hero-section" id="hero">
+      <div class="hero-texture-overlay"></div>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge-stamp">
+            <span class="stamp-icon">🌾</span>
+            <span>GHAR KA TABLE</span>
+          </div>
+
+          <h1 class="hero-title">“Aaj ghar pe <br><span class="hero-highlight">khaana khaoge?</span>”</h1>
+
+          <p class="hero-subtitle">
+            Homestyle Indian food, made with the kind of love you can taste. Inspired by Sunday lunches, steaming brass kadhais, warm rotis right off the iron tawa, and stories over chai.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#menu-section" class="btn-primary hero-btn">
+              <span>SEE TODAY'S MENU</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#thali-builder" class="btn-secondary hero-btn">
+              <span>🍽️ BUILD YOUR THAALI</span>
+            </a>
+          </div>
+
+          <div class="hero-pledge">
+            <span class="pledge-heart">🫶</span>
+            <span class="pledge-text">
+              <strong>Made fresh, just like home.</strong>
+              No commercial food colors, no palm oil, slow-cooked in cold-pressed oils & pure desi ghee.
+            </span>
+          </div>
+        </div>
+
+        <!-- Hero Visual: Cozy Nostalgic Dining Table -->
+        <div class="hero-visual">
+          <div class="table-frame">
+            <div class="tablecloth-pattern"></div>
+            <!-- Polaroid Style Photo Stack -->
+            <div class="photo-card polaroid-main">
+              <div class="tape-strip top-center"></div>
+              <div class="photo-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" alt="Homestyle Indian Thali and warm dining table" class="hero-img" loading="eager">
+                <div class="dish-tag-float">Garma-Garam Phulke & Dal</div>
+              </div>
+              <div class="polaroid-caption">
+                <span class="caption-handwritten">Sunday family feast • Maa ke haath ka swaad</span>
+              </div>
+            </div>
+
+            <!-- Floating Stamp Card -->
+            <div class="floating-note note-1">
+              <span class="note-tape"></span>
+              <span class="note-doodle">✨</span>
+              <p>“Pehle garam garam phulka kha lo, baatein baad mein!”</p>
+            </div>
+
+            <!-- Floating Chai Glass Sticker -->
+            <div class="floating-note note-2">
+              <span class="chai-sticker">☕</span>
+              <span class="note-bold">Adrak Chai</span>
+              <span class="note-detail">3 baar ubaali hui</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marquee Ribbon -->
+      <div class="retro-ribbon">
+        <div class="ribbon-track">
+          <span>DESI GHEE TADKA</span>
+          <span class="star">✦</span>
+          <span>IRON TAWA ROTIS</span>
+          <span class="star">✦</span>
+          <span>NANI'S OVERNIGHT RAJMA</span>
+          <span class="star">✦</span>
+          <span>KADAK KULHAD CHAI</span>
+          <span class="star">✦</span>
+          <span>STEEL TIFFIN DABBA</span>
+          <span class="star">✦</span>
+          <span>SUNDAY SPECIAL KHEER</span>
+          <span class="star">✦</span>
+          <span>NO PRESERVATIVES</span>
+          <span class="star">✦</span>
+          <span>DESI GHEE TADKA</span>
+          <span class="star">✦</span>
+          <span>IRON TAWA ROTIS</span>
+          <span class="star">✦</span>
+          <span>NANI'S OVERNIGHT RAJMA</span>
+          <span class="star">✦</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: AAJ KYA BAN RAHA HAI? (DAILY HOMESTYLE MENU) -->
+    <section class="menu-section section-padding" id="menu-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="handwritten-eyebrow">Thoda sa pyaar, dher saara swaad</div>
+          <h2 class="section-title">Aaj Kya Ban Raha Hai?</h2>
+          <p class="section-desc">Our kitchen cooks what’s fresh, seasonal, and comforting today. Pick your preference to explore the day's pots.</p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="menu-filters-wrapper">
+          <div class="filter-pill-group" role="tablist" aria-label="Menu Dietary Categories">
+            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">
+              <span class="filter-icon">🍲</span>
+              <span>Sab Kuch (All)</span>
+            </button>
+            <button class="filter-btn" data-filter="veg" role="tab" aria-selected="false">
+              <span class="filter-icon">🥬</span>
+              <span>Shuddh Shakahari (Veg)</span>
+            </button>
+            <button class="filter-btn" data-filter="non-veg" role="tab" aria-selected="false">
+              <span class="filter-icon">🍗</span>
+              <span>Homestyle Non-Veg</span>
+            </button>
+            <button class="filter-btn" data-filter="comfort" role="tab" aria-selected="false">
+              <span class="filter-icon">🫓</span>
+              <span>Roti, Chawal & Meetha</span>
+            </button>
+          </div>
+
+          <!-- Quick Meal Timing Filter -->
+          <div class="time-filter-row">
+            <span class="time-label">Samay:</span>
+            <button class="time-chip active" data-time="all">Pure Din Ka Khana</button>
+            <button class="time-chip" data-time="dopahar">Dopahar Ka Lunch</button>
+            <button class="time-chip" data-time="shaam">Shaam Ki Chai & Nashta</button>
+            <button class="time-chip" data-time="raat">Raat Ka Sukoon</button>
+          </div>
+        </div>
+
+        <!-- Menu Cards Grid -->
+        <div class="dishes-grid" id="dishesGrid">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <!-- Menu Bottom Note -->
+        <div class="menu-bottom-badge">
+          <p>🔔 <em>Roz ka menu subah 7:30 baje taaza sabziyon ke aane ke baad decide hota hai.</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: NANI KE HAATH SE (EMOTIONAL CENTERPIECE) -->
+    <section class="nani-section section-padding" id="nani-recipes">
+      <div class="container">
+        <div class="nani-header-box">
+          <div class="nani-stamp">
+            <span class="stamp-circle">ASLI KHAZANA</span>
+          </div>
+          <h2 class="section-title text-maroon">Nani Ke Haath Se</h2>
+          <p class="nani-lead-quote">
+            “Some recipes aren't written down.<br>
+            They're remembered. In the sound of sizzling cumin, in the weight of an iron katori, and the intuition of maa's fingers.”
+          </p>
+        </div>
+
+        <!-- Polaroid Postcards Grid -->
+        <div class="nani-cards-container">
+          <!-- Card 1: Nani's Rajma -->
+          <div class="recipe-polaroid" data-recipe="rajma">
+            <div class="polaroid-pin">📌</div>
+            <div class="polaroid-tape"></div>
+            <div class="polaroid-photo">
+              <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80" alt="Nani's Slow Cooked Rajma" loading="lazy">
+              <span class="diet-tag veg">Veg</span>
+            </div>
+            <div class="polaroid-body">
+              <div class="recipe-head">
+                <h3 class="recipe-name">Nani's Rajma</h3>
+                <span class="recipe-price">₹220</span>
+              </div>
+              <p class="recipe-desc">Chitra Rajma soaked overnight with a pinch of saunf and slow-cooked for 4 hours with fresh tomato-ginger tadka.</p>
+              <div class="polaroid-sticky-note">
+                <span class="sticky-pin">📍</span>
+                <p class="handwritten-note">“Thoda aur ghee daalna ❤️ Upar se kacha pyaaz mat bhoolna!”</p>
+              </div>
+              <div class="card-actions">
+                <button class="btn-recipe-story" onclick="openRecipeModal('rajma')">Puri Kahaani Padho</button>
+                <button class="btn-card-add" onclick="quickAddToCart('Nani\'s Rajma', 220, 'Nani Ke Haath Se')">+ Add to Tiffin</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Maa's Aloo Paratha -->
+          <div class="recipe-polaroid tilted-right" data-recipe="aloo-paratha">
+            <div class="polaroid-pin">📌</div>
+            <div class="polaroid-tape"></div>
+            <div class="polaroid-photo">
+              <img src="https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&w=600&q=80" alt="Maa's Crispy Aloo Paratha" loading="lazy">
+              <span class="diet-tag veg">Veg</span>
+            </div>
+            <div class="polaroid-body">
+              <div class="recipe-head">
+                <h3 class="recipe-name">Maa's Aloo Paratha</h3>
+                <span class="recipe-price">₹180</span>
+              </div>
+              <p class="recipe-desc">Stuffed with spiced mashed potatoes, fresh coriander, green chillies & roasted anardana. Served with white makkhan & aam ka achaar.</p>
+              <div class="polaroid-sticky-note">
+                <span class="sticky-pin">📍</span>
+                <p class="handwritten-note">“Iron tawa par roasted with desi ghee... Dahi ke saath khana!”</p>
+              </div>
+              <div class="card-actions">
+                <button class="btn-recipe-story" onclick="openRecipeModal('paratha')">Puri Kahaani Padho</button>
+                <button class="btn-card-add" onclick="quickAddToCart('Maa\'s Aloo Paratha', 180, 'Nani Ke Haath Se')">+ Add to Tiffin</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Papa's Cutting Chai -->
+          <div class="recipe-polaroid tilted-left" data-recipe="cutting-chai">
+            <div class="polaroid-pin">📌</div>
+            <div class="polaroid-tape"></div>
+            <div class="polaroid-photo">
+              <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80" alt="Papa's Cutting Chai with Parle-G" loading="lazy">
+              <span class="diet-tag veg">Hot Beverage</span>
+            </div>
+            <div class="polaroid-body">
+              <div class="recipe-head">
+                <h3 class="recipe-name">Papa's Cutting Chai</h3>
+                <span class="recipe-price">₹90</span>
+              </div>
+              <p class="recipe-desc">Assam CTC boiled three times with crushed adrak, green elaichi, and lemongrass from our balcony pot. Served with 2 Parle-G biscuits.</p>
+              <div class="polaroid-sticky-note">
+                <span class="sticky-pin">📍</span>
+                <p class="handwritten-note">“Cheeni barabar hai? Ek biscuit dubo ke kha lo!”</p>
+              </div>
+              <div class="card-actions">
+                <button class="btn-recipe-story" onclick="openRecipeModal('chai')">Puri Kahaani Padho</button>
+                <button class="btn-card-add" onclick="quickAddToCart('Papa\'s Cutting Chai', 90, 'Nani Ke Haath Se')">+ Add to Tiffin</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: CHAI PE CHARCHA (CAFÉ AREA & INTERACTIVE MOOD PICKER) -->
+    <section class="chai-section section-padding" id="chai-charcha">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="handwritten-eyebrow">Baaton ka daur, garam ghoont</div>
+          <h2 class="section-title">Chai Pe Charcha</h2>
+          <p class="section-desc">Because in an Indian home, there's no problem that two cups of ginger tea and a long conversation cannot soften.</p>
+        </div>
+
+        <div class="chai-layout-grid">
+          <!-- Left: Vintage Wooden Café Board -->
+          <div class="chai-menu-board">
+            <div class="board-frame">
+              <div class="board-header">
+                <span class="board-icon">☕</span>
+                <h3>KHURPECH CHAI MENU</h3>
+                <span class="board-sub">Kulhad & Glass Special</span>
+              </div>
+              <ul class="board-list">
+                <li class="board-item">
+                  <div class="item-meta">
+                    <span class="item-name">☕ Masala Chai</span>
+                    <span class="item-desc">Cloves, cinnamon, black pepper & fennel</span>
+                  </div>
+                  <div class="item-price">₹80</div>
+                  <button class="mini-add-btn" onclick="quickAddToCart('Masala Chai', 80, 'Chai Menu')">+</button>
+                </li>
+                <li class="board-item">
+                  <div class="item-meta">
+                    <span class="item-name">☕ Adrak Chai</span>
+                    <span class="item-desc">Crushed winter ginger boiled kadak</span>
+                  </div>
+                  <div class="item-price">₹90</div>
+                  <button class="mini-add-btn" onclick="quickAddToCart('Adrak Chai', 90, 'Chai Menu')">+</button>
+                </li>
+                <li class="board-item">
+                  <div class="item-meta">
+                    <span class="item-name">☕ Elaichi Chai</span>
+                    <span class="item-desc">Freshly split green cardamom with creamy milk</span>
+                  </div>
+                  <div class="item-price">₹90</div>
+                  <button class="mini-add-btn" onclick="quickAddToCart('Elaichi Chai', 90, 'Chai Menu')">+</button>
+                </li>
+                <li class="board-item">
+                  <div class="item-meta">
+                    <span class="item-name">☕ Cutting Chai</span>
+                    <span class="item-desc">Tapri style half-glass strong kick</span>
+                  </div>
+                  <div class="item-price">₹60</div>
+                  <button class="mini-add-btn" onclick="quickAddToCart('Cutting Chai', 60, 'Chai Menu')">+</button>
+                </li>
+                <li class="board-item">
+                  <div class="item-meta">
+                    <span class="item-name">☕ Kashmiri Kahwa</span>
+                    <span class="item-desc">Green tea leaves, saffron strands & slivered almonds</span>
+                  </div>
+                  <div class="item-price">₹110</div>
+                  <button class="mini-add-btn" onclick="quickAddToCart('Kashmiri Kahwa', 110, 'Chai Menu')">+</button>
+                </li>
+              </ul>
+              <div class="board-footer-note">
+                <span>Free biscuit refill with every 2 cups ❤️</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Mood Recommender -->
+          <div class="chai-recommender-card">
+            <div class="recommender-header">
+              <span class="rec-badge">INTERACTIVE JODI MAKER</span>
+              <h3 class="rec-title">“What's your mood today?”</h3>
+              <p class="rec-instruction">Batao kaisa lag raha hai, we’ll brew the exact chai + snack pairing you need right now.</p>
+            </div>
+
+            <div class="mood-selector-grid">
+              <button class="mood-btn" data-mood="energy">
+                <span class="mood-emoji">☀️</span>
+                <span class="mood-text">Need energy</span>
+                <span class="mood-sub">Thakaan mitani hai</span>
+              </button>
+              <button class="mood-btn" data-mood="rain">
+                <span class="mood-emoji">🌧️</span>
+                <span class="mood-text">Baarish ho rahi hai</span>
+                <span class="mood-sub">Mausam hai suhana</span>
+              </button>
+              <button class="mood-btn" data-mood="peace">
+                <span class="mood-emoji">😌</span>
+                <span class="mood-text">Bas sukoon chahiye</span>
+                <span class="mood-sub">Shanti & nostalgia</span>
+              </button>
+              <button class="mood-btn" data-mood="gossip">
+                <span class="mood-emoji">🗣️</span>
+                <span class="mood-text">Time for gossip</span>
+                <span class="mood-sub">Doston ke saath kisse</span>
+              </button>
+            </div>
+
+            <!-- Recommendation Dynamic Box -->
+            <div class="recommendation-result" id="recommendationResult">
+              <div class="result-placeholder">
+                <span class="placeholder-icon">👆</span>
+                <p>Upar se apna mood choose karo aur dekho aaj Maa kya bhej rahi hain!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: APNI THAALI BANAO (SHOWPIECE INTERACTION) -->
+    <section class="thali-section section-padding" id="thali-builder">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="handwritten-eyebrow">Aapki marzi, hamara parosna</div>
+          <h2 class="section-title">Apni Thaali Banao</h2>
+          <p class="section-desc">Assemble your authentic stainless steel dinner plate piece by piece. Watch your katoris fill up in real time with hot homestyle comfort.</p>
+        </div>
+
+        <div class="thali-builder-container">
+          <!-- Step Controls & Options (Left) -->
+          <div class="thali-steps-panel">
+            <!-- Step Navigation Tabs -->
+            <div class="thali-step-pills">
+              <button class="thali-tab active" data-step="1">
+                <span class="step-num">1</span>
+                <span class="step-title">Sabzi</span>
+              </button>
+              <button class="thali-tab" data-step="2">
+                <span class="step-num">2</span>
+                <span class="step-title">Roti</span>
+              </button>
+              <button class="thali-tab" data-step="3">
+                <span class="step-num">3</span>
+                <span class="step-title">Side</span>
+              </button>
+              <button class="thali-tab" data-step="4">
+                <span class="step-num">4</span>
+                <span class="step-title">Meetha</span>
+              </button>
+            </div>
+
+            <!-- Step Content Panels -->
+            <div class="steps-content-box">
+              <!-- STEP 1: SABZI -->
+              <div class="step-pane active" id="pane-step-1">
+                <div class="pane-headline">
+                  <h4>Step 1: Choose your Sabzi / Main Pot</h4>
+                  <span class="pane-hint">Select 1 comforting dish</span>
+                </div>
+                <div class="option-cards-grid">
+                  <label class="thali-option-card">
+                    <input type="radio" name="sabzi" value="Paneer Bhurji" data-hindi="पनीर भुर्जी" data-color="#E8B042" data-price="0" checked>
+                    <div class="card-inner">
+                      <span class="opt-icon">🧀</span>
+                      <div class="opt-details">
+                        <span class="opt-name">Paneer Bhurji</span>
+                        <span class="opt-sub">Fresh crumbed paneer, capsicum & cumin</span>
+                      </div>
+                    </div>
+                  </label>
+
+                  <label class="thali-option-card">
+                    <input type="radio" name="sabzi" value="Dal Makhani" data-hindi="दाल मखनी" data-color="#54231E" data-price="20">
+                    <div class="card-inner">
+                      <span class="opt-icon">🍲</span>
+                      <div class="opt-details">
+                        <span class="opt-name">Dal Makhani (+₹20)</span>
+                        <span class="opt-sub">Slow-cooked 14 hours with white makkhan</span>
+                      </div>
+                    </div>
+                  </label>
+
+                  <label class="thali-option-card">
+                    <input type="radio" name="sabzi" value="Aloo Gobhi" data-hindi="आलू गोभी" data-color="#C9882B" data-price="0">
+                    <div class="card-inner">
+                      <span class="opt-icon">🥔</span>
+                      <div class="opt-details">
+                        <span class="opt-name">Aloo Gobhi Adraki</span>
+                        <span class="opt-sub">Dry roasted cauliflower, potatoes & ginger juliennes</span>
+                      </div>
+                    </div>
+                  </label>
+
+                  <label class="thali-option-card">
+                    <input type="radio" name="sabzi" value="Bhindi Masala" data-hindi="भिंडी मसाला" data-color="#4F6636" data-price="0">
+                    <div class="card-inner">
+                      <span class="opt-icon">🌿</span>
+                      <div class="opt-details">
+                        <span class="opt-name">Crispy Bhindi Fry</span>
+                        <span class="opt-sub">Okra tossed with amchur & caramelized onions</span>
+                      </div>
+                    </div>
+                  </label>
+
+                  <label class="thali-option-card">
+                    <input type="radio" name="sabzi" value="Pindi Chole" data-hindi="पिंडी छोले" data-color="#6E3A24" data-price="10">
+                    <div class="card-inner">
+                      <span class="opt-icon">🧆</span>
+                      <div class="opt-details">
+                        <span class="opt-name">Pindi Chole (+₹10)</span>
+                        <span class="opt-sub">Dark chickpeas cooked with anardana & tea leaves</span>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- STEP 2: ROTI -->
+              <div class="step-pane" id="pane-step-2">
+                <div class="pane-headline">
+                  <h4>Step 2: Choose your Roti / Bread</h4>
+                  <span class="pane-hint">Served fresh and piping hot</span>
+                </div>
+                <div class="option-cards-grid">
+                  <label class="thali-option-card">
+                    <input type="radio" name="roti" value="Phulka with Ghee (3 pcs)" data-hindi="घी के फुल्के" data-color="#EED59C" checked>
+                    <div class="card-inner">
+                      <span class="opt-icon">🫓</span>
+                      <div class="opt-details">
+                        <span class="opt-name">Phulka with Ghee (3 pcs)</span>
+                        <span class="opt-sub">Soft puffed rotis brushed with pure cow ghee</span>
+                      </div>
+                    </div>
+                  </label>
+
+                  <label class="thali-option-card">
+                    <input type="radio" name="roti" value="Laccha Paratha (2 pcs)" data-hindi="लच्छा परांठा" data-color="#DFBA75">
+                    <div class="card-inner">
+                      <span class="opt-icon">🥐</span>
+                      <div class="opt-details">
+                        <span class="opt-name">Laccha Paratha (2 pcs)</span>
+                        <span class="opt-sub">Multi-layered crispy, flaky whole wheat paratha</span>
+                      </div>
+                    </div>
+                  </label>
+
+                  <label class="thali-option-card">
+                    <input type="radio" name="roti" value="Tawa Butter Naan (2 pcs)" data-hindi="तवा बटर नान" data-color="#F2DDA4">
+                    <div class="card-inner">
+                      <span class="opt-icon">🥖</span>
+                      <div class="opt-details">
+                        <span class="opt-name">Tawa Butter Naan (2 pcs)</span>
+                        <span class="opt-sub">Soft iron tawa roasted with salted butter</span>
+                      </div>
+                    </div>
+                  </label>
+
+                  <label class="thali-option-card">
+                    <input type="radio" name="roti" value="Missi Roti (2 pcs)" data-hindi="मिस्सी रोटी" data-color="#D19C45">
+                    <div class="card-inner">
+                      <span class="opt-icon">🌾</span>
+                      <div class="opt-details">
+                        <span class="opt-name">Missi Roti (2 pcs)</span>
+                        <span class="opt-sub">Gram flour bread infused with kasuri methi & ajwain</span>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- STEP 3: SIDES -->
+              <div class="step-pane" id="pane-step-3">
+                <div class="pane-headline">
+                  <h4>Step 3: Choose your Side</h4>
+                  <span class="pane-hint">Balancing the meal</span>
+                </div>
+                <div class="option-cards-grid">
+                  <label class="thali-option-card">
+                    <input type="radio" name="side" value="Tadka Dal & Jeera Rice" data-hindi="तड़का दाल व जीरा राइस" data-color="#EAA638" checked>
+                    <div class="card-inner">
+                      <span class="opt-icon">🍚</span>
+                      <div class="opt-details">
+                        <span class="opt-name">Tadka Dal & Jeera Rice</span>
+                        <span class="opt-sub">Yellow toor dal with heeng-jeera crackle & fragrant rice</span>
+                      </div>
+                    </div>
+                  </label>
+
+                  <label class="thali-option-card">
+                    <input type="radio" name="side" value="Boondi Raita & Achaar" data-hindi="बूंदी रायता व अचार" data-color="#EAE3D2">
+                    <div class="card-inner">
+                      <span class="opt-icon">🥣</span>
+                      <div class="opt-details">
+                        <span class="opt-name">Boondi Raita & Achaar</span>
+                        <span class="opt-sub">Chilled spiced curd with crunchy boondi & mango pickle</span>
+                      </div>
+                    </div>
+                  </label>
+
+                  <label class="thali-option-card">
+                    <input type="radio" name="side" value="Sirka Pyaaz & Green Salad" data-hindi="सिरका प्याज व सलाद" data-color="#8B3028">
+                    <div class="card-inner">
+                      <span class="opt-icon">🥗</span>
+                      <div class="opt-details">
+                        <span class="opt-name">Sirka Pyaaz & Green Salad</span>
+                        <span class="opt-sub">Beetroot vinegar baby shallots, sliced cucumbers & lemons</span>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- STEP 4: SWEET -->
+              <div class="step-pane" id="pane-step-4">
+                <div class="pane-headline">
+                  <h4>Step 4: Sweet Craving?</h4>
+                  <span class="pane-hint">Kuch meetha ho jaye</span>
+                </div>
+                <div class="option-cards-grid">
+                  <label class="thali-option-card">
+                    <input type="radio" name="sweet" value="Gulab Jamun (2 pcs)" data-hindi="गुलाब जामुन" data-color="#5E2313" data-price="40" checked>
+                    <div class="card-inner">
+                      <span class="opt-icon">🍮</span>
+                      <div class="opt-details">
+                        <span class="opt-name">Garma-Garam Gulab Jamun (+₹40)</span>
+                        <span class="opt-sub">Dipped in cardamom and rose sugar syrup</span>
+                      </div>
+                    </div>
+                  </label>
+
+                  <label class="thali-option-card">
+                    <input type="radio" name="sweet" value="Maa Ki Kheer" data-hindi="माँ की खीर" data-color="#F2E6C9" data-price="50">
+                    <div class="card-inner">
+                      <span class="opt-icon">🍨</span>
+                      <div class="opt-details">
+                        <span class="opt-name">Maa Ki Kheer (+₹50)</span>
+                        <span class="opt-sub">Slow-reduced milk rice pudding loaded with pistachios</span>
+                      </div>
+                    </div>
+                  </label>
+
+                  <label class="thali-option-card">
+                    <input type="radio" name="sweet" value="None" data-hindi="कोई मीठा नहीं" data-color="transparent" data-price="0">
+                    <div class="card-inner">
+                      <span class="opt-icon">🙅‍♂️</span>
+                      <div class="opt-details">
+                        <span class="opt-name">No sweet today</span>
+                        <span class="opt-sub">Sirf namkeen khana pasand hai</span>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Thali Step Navigation Buttons -->
+            <div class="thali-nav-controls">
+              <button class="btn-step-nav" id="prevStepBtn" disabled>← Previous Step</button>
+              <button class="btn-step-nav btn-primary" id="nextStepBtn">Next Step →</button>
+            </div>
+          </div>
+
+          <!-- Live Visual Stainless Steel Thaali (Right) -->
+          <div class="thali-visual-panel">
+            <div class="steel-plate-wrapper">
+              <!-- Authentic Stainless Steel Thaali -->
+              <div class="steel-thali" id="steelThali">
+                <div class="thali-rim"></div>
+                <div class="thali-engraving">घर सा • SPECIAL THAALI</div>
+
+                <!-- Center: Roti & Rice -->
+                <div class="thali-center-hub">
+                  <div class="dish-item dish-bread" id="plateBread">
+                    <div class="bread-icon-wrapper">
+                      <span class="bread-icon">🫓</span>
+                      <span class="steam-roti">~</span>
+                    </div>
+                    <span class="dish-label" id="plateBreadLabel">Phulka with Ghee</span>
+                  </div>
+                  <div class="dish-item dish-rice" id="plateRice">
+                    <span class="rice-pile">🍚</span>
+                    <span class="dish-label">Basmati Rice</span>
+                  </div>
+                </div>
+
+                <!-- Katori 1: Sabzi (Top Left) -->
+                <div class="steel-katori katori-1" id="katoriSabzi">
+                  <div class="katori-inner" style="background: radial-gradient(circle, #f3c258 0%, #d99a27 80%);">
+                    <span class="katori-emoji">🥘</span>
+                  </div>
+                  <span class="katori-badge" id="katoriSabziBadge">Paneer Bhurji</span>
+                </div>
+
+                <!-- Katori 2: Dal / Side 1 (Top Right) -->
+                <div class="steel-katori katori-2" id="katoriSide1">
+                  <div class="katori-inner" style="background: radial-gradient(circle, #f8c952 0%, #b87a17 80%);">
+                    <span class="katori-emoji">🍲</span>
+                  </div>
+                  <span class="katori-badge" id="katoriSideBadge">Tadka Dal</span>
+                </div>
+
+                <!-- Katori 3: Raita / Salad (Bottom Right) -->
+                <div class="steel-katori katori-3" id="katoriSide2">
+                  <div class="katori-inner" style="background: radial-gradient(circle, #fff9ed 0%, #e6d8ba 80%);">
+                    <span class="katori-emoji">🥗</span>
+                  </div>
+                  <span class="katori-badge">Kacha Salad & Achaar</span>
+                </div>
+
+                <!-- Katori 4: Sweet (Bottom Left) -->
+                <div class="steel-katori katori-4" id="katoriSweet">
+                  <div class="katori-inner" id="katoriSweetInner" style="background: radial-gradient(circle, #7e301d 0%, #4a1c10 80%);">
+                    <span class="katori-emoji" id="katoriSweetEmoji">🍮</span>
+                  </div>
+                  <span class="katori-badge" id="katoriSweetBadge">Gulab Jamun</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Thali Summary & Add to Cart -->
+            <div class="thali-order-bar">
+              <div class="thali-summary-text">
+                <span class="summary-eyebrow">Aapki Custom Thaali</span>
+                <h3 class="thali-name-preview" id="thaliSummaryTitle">Paneer Bhurji + Phulka Thaali</h3>
+                <div class="thali-price-tag">
+                  <span class="price-label">TOTAL</span>
+                  <span class="price-amount" id="thaliPriceDisplay">₹349</span>
+                </div>
+              </div>
+              <button class="btn-primary btn-add-thali" id="addThaliBtn">
+                <span>[ ADD TO ORDER ]</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: GHAR JAISA KYUN? (EMOTIONAL STORY) -->
+    <section class="story-section section-padding" id="why-ghar-sa">
+      <div class="container">
+        <div class="story-card-wrapper">
+          <div class="tablecloth-card-border"></div>
+          
+          <div class="story-inner-content">
+            <div class="story-header text-center">
+              <div class="handwritten-eyebrow text-haldi">Dil Se Kahaani</div>
+              <h2 class="section-title">“Ghar Jaisa Kyun?”</h2>
+              <div class="story-divider-line"></div>
+            </div>
+
+            <div class="story-narrative text-center">
+              <p class="story-highlight-quote">
+                “Because every home has a smell.”
+              </p>
+              <p class="story-body-text">
+                Ours smells like tadka hitting hot ghee,<br>
+                fresh rotis puffing on the iron stove,<br>
+                and chai that somehow always becomes <em>one more cup</em>.
+              </p>
+              <p class="story-sub-text">
+                We didn’t build घर सा Café to be another slick, stainless restaurant with plastic garnishes and frozen gravies. We built it because we missed home at 2 PM on a Tuesday. We missed coming into a kitchen where someone asks: <em>“Beta, bhookh lagi hai? Do phulke aur bana doon?”</em>
+              </p>
+            </div>
+
+            <!-- Three Core Pillars -->
+            <div class="story-pillars-grid">
+              <div class="pillar-box">
+                <div class="pillar-icon">🌿</div>
+                <h4 class="pillar-title">Fresh Every Morning</h4>
+                <p class="pillar-desc">No pre-made frozen gravies. Our onions are chopped fresh at 6:30 AM, tomatoes slow-simmered, and greens cleaned with care.</p>
+              </div>
+
+              <div class="pillar-box">
+                <div class="pillar-icon">👵</div>
+                <h4 class="pillar-title">Family Recipes</h4>
+                <p class="pillar-desc">Preserved on yellowed diary pages and whispered cooking secrets from nanis, daadis, and fathers who knew exactly when the heeng was fried just right.</p>
+              </div>
+
+              <div class="pillar-box">
+                <div class="pillar-icon">🚫</div>
+                <h4 class="pillar-title">No Shortcuts</h4>
+                <p class="pillar-desc">Pure cold-pressed mustard oil, bilona cow ghee, whole roasted spices pounded in an iron mortar. No artificial food coloring or flavor enhancers. Ever.</p>
+              </div>
+            </div>
+
+            <!-- Nostalgic Note Signature -->
+            <div class="story-signature">
+              <p class="signature-text">Aapka intezaar rahega,</p>
+              <span class="signature-brand">Vardaan Saxena & Ghar Sa Parivaar ❤️</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: MILTE HAIN? (LOCATION & CONTACT) -->
+    <section class="location-section section-padding" id="location">
+      <div class="container">
+        <div class="location-grid">
+          <!-- Left: Details & Timing -->
+          <div class="location-info-card">
+            <div class="location-badge">MILTE HAIN?</div>
+            <h2 class="section-title">Come hungry.<br>Leave like family.</h2>
+            <p class="location-sub">Whether you are coming for a quick morning cutting chai, a slow Sunday thali with cousins, or just a corner to read a book while eating hot parathas.</p>
+
+            <div class="info-items-list">
+              <div class="info-item">
+                <span class="info-icon">📍</span>
+                <div>
+                  <strong>Address</strong>
+                  <p>Plot 14, Sector 62, Near Electronic City Metro, Noida, UP - 201309</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <span class="info-icon">⏰</span>
+                <div>
+                  <strong>Rasoi Timings</strong>
+                  <p>Mon–Fri: 8:00 AM – 10:30 PM<br>Sat–Sun: 9:00 AM – 11:30 PM</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <span class="info-icon">📞</span>
+                <div>
+                  <strong>Baithak / Booking Phone</strong>
+                  <p>+91 7428938113 (Vardaan Saxena)</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <span class="info-icon">✉️</span>
+                <div>
+                  <strong>Email & Inquiries</strong>
+                  <p><a href="mailto:vardaansaxenagdg@gmail.com">vardaansaxenagdg@gmail.com</a></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="location-action-buttons">
+              <a href="https://maps.google.com/?q=Noida+Sector+62" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                <span>[ GET DIRECTIONS ]</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+              </a>
+              <button class="btn-secondary" id="bookTableBtn">
+                <span>Reserve a Khaat / Table</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Visual Neighborhood Postcard / Map Card -->
+          <div class="location-visual-card">
+            <div class="postcard-frame">
+              <div class="postcard-stamp-corner">
+                <div class="delhi-stamp">NOIDA, UP<br>POSTAGE 50p</div>
+              </div>
+              <div class="cafe-sketch-illustration">
+                <div class="cafe-signboard">घर सा Café</div>
+                <div class="chalkboard-quote">“Thodi chai, thoda sukoon”</div>
+                <div class="chai-stall-visual">
+                  <div class="tapri-counter">
+                    <span class="glass-holder">🍵 🍵 🍵</span>
+                    <span class="kettle">🫖</span>
+                    <span class="biscuit-jar">🍪</span>
+                  </div>
+                </div>
+              </div>
+              <div class="postcard-handwriting">
+                <p>“Noida Sector 62 metro station se sirf 3 minute ki paidal doori. Peepal ke ped ke theek saamne hamara chhota sa aangan hai.”</p>
+                <span class="written-by">— Vardaan Saxena & Ghar Sa Rasoi Team</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SLEEK MINIMAL & AESTHETIC FOOTER -->
+  <footer class="main-footer">
+    <div class="footer-top-accent"></div>
+    <div class="container footer-compact-container">
+      <div class="footer-top-row">
+        <div class="footer-brand-badge">
+          <span class="footer-logo">घर सा Café</span>
+          <span class="footer-tagline">“Jahan khaana sirf khaana nahi, ghar ki yaad hai.”</span>
+        </div>
+        
+        <div class="footer-links-inline">
+          <a href="#menu-section" class="f-link">Menu</a>
+          <span class="f-dot">•</span>
+          <a href="#thali-builder" class="f-link">Thaali</a>
+          <span class="f-dot">•</span>
+          <a href="#nani-recipes" class="f-link">Recipes</a>
+          <span class="f-dot">•</span>
+          <a href="#chai-charcha" class="f-link">Chai</a>
+          <span class="f-dot">•</span>
+          <a href="#location" class="f-link">Noida Sec-62</a>
+          <span class="f-dot">•</span>
+          <a href="tel:+917428938113" class="f-link f-contact-link">📞 7428938113</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <span class="footer-copy">&copy; 2026 घर सा Café & Rasoi</span>
+        <span class="footer-curated">Curated by <span class="animated-heart" aria-label="love">❤️</span> with unconditional love.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODALS & DRAWERS ================= -->
+
+  <!-- 1. TIFFIN CART DRAWER (Mera Tiffin Dabba) -->
+  <div class="cart-drawer-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Tiffin Cart Drawer">
+    <div class="cart-drawer-header">
+      <div class="tiffin-header-branding">
+        <div class="tiffin-stack-icon">🍱</div>
+        <div>
+          <h3 class="tiffin-drawer-title">Mera Tiffin Dabba</h3>
+          <span class="tiffin-subtitle">Ghar se parosa hua swaad</span>
+        </div>
+      </div>
+      <button class="cart-close-btn" id="closeCartBtn" aria-label="Close Tiffin">&times;</button>
+    </div>
+
+    <div class="cart-items-body" id="cartItemsBody">
+      <!-- Populated via JS -->
+      <div class="empty-cart-state" id="emptyCartState">
+        <div class="empty-tiffin-ill">🥘</div>
+        <h4>Tiffin abhi khali hai!</h4>
+        <p>Thoda swaad, thodi yaadein daaliye. Aaj ki sabzi ya custom thaali chuniyega?</p>
+        <a href="#thali-builder" class="btn-primary mini-btn" onclick="toggleCartDrawer(false)">Apni Thaali Banao</a>
+      </div>
+    </div>
+
+    <!-- Tiffin Receipt & Summary -->
+    <div class="cart-footer" id="cartFooter">
+      <div class="cart-bill-breakdown">
+        <div class="bill-row">
+          <span>Khana Subtotal</span>
+          <span id="billSubtotal">₹0</span>
+        </div>
+        <div class="bill-row sweet-row">
+          <span>Maa Ka Pyaar ❤️</span>
+          <span class="free-tag">Hamesha Free</span>
+        </div>
+        <div class="bill-row">
+          <span>Rasoi GST (5%)</span>
+          <span id="billGst">₹0</span>
+        </div>
+        <div class="bill-divider"></div>
+        <div class="bill-row total-row">
+          <span>Kul Raashi (Total)</span>
+          <span id="billGrandTotal">₹0</span>
+        </div>
+      </div>
+
+      <div class="cart-actions-group">
+        <button class="btn-primary w-full checkout-btn" id="checkoutBtn">
+          <span>AGAR GHOOM RAHE HO TO ORDER KARO (WHATSAPP)</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <button class="btn-secondary w-full print-receipt-btn" id="viewReceiptBtn">
+          <span>🧾 Vintage Parcha (View Receipt)</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 2. NANI'S RECIPE STORY MODAL -->
+  <div class="modal-backdrop" id="recipeModalBackdrop">
+    <div class="modal-card vintage-paper-modal" id="recipeModalCard">
+      <button class="modal-close-icon" onclick="closeRecipeModal()">&times;</button>
+      <div class="recipe-modal-content" id="recipeModalContent">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. TABLE / BAITHAK BOOKING MODAL -->
+  <div class="modal-backdrop" id="tableModalBackdrop">
+    <div class="modal-card table-booking-modal">
+      <button class="modal-close-icon" onclick="closeTableModal()">&times;</button>
+      <div class="booking-header">
+        <span class="modal-badge">KHAAT YA MEZ?</span>
+        <h3>Apni Baithak Reserve Karo</h3>
+        <p>Tell us when you're coming so Maa keeps the rotis ready!</p>
+      </div>
+      <form id="tableBookingForm" class="booking-form" onsubmit="handleTableBooking(event)">
+        <div class="form-group">
+          <label for="bookName">Aapka Naam (Your Name)</label>
+          <input type="text" id="bookName" placeholder="e.g. Aryan Sharma" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bookPhone">Phone Number</label>
+            <input type="tel" id="bookPhone" placeholder="7428938113" required>
+          </div>
+          <div class="form-group">
+            <label for="bookGuests">Kitne Log (Guests)</label>
+            <select id="bookGuests">
+              <option value="1">Akela (1 person - Sukoon)</option>
+              <option value="2" selected>Dono (2 people)</option>
+              <option value="3-4">Chhota Parivaar (3-4 people)</option>
+              <option value="5+">Bada Parivaar / Dosti (5+ people)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bookDate">Taarikh (Date)</label>
+            <input type="date" id="bookDate" required>
+          </div>
+          <div class="form-group">
+            <label for="bookTime">Samay (Time Slot)</label>
+            <select id="bookTime">
+              <option value="breakfast">Morning Chai & Nashta (8:30 - 11:00 AM)</option>
+              <option value="lunch" selected>Sunday/Dopahar Lunch (12:30 - 3:30 PM)</option>
+              <option value="evening">Shaam Ki Charcha (4:30 - 7:00 PM)</option>
+              <option value="dinner">Raat Ka Sukoon Dinner (7:30 - 10:30 PM)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="bookSeating">Baithne Ki Pasand (Seating Preference)</label>
+          <select id="bookSeating">
+            <option value="khaat">Charpai / Khaat (Traditional woven cot)</option>
+            <option value="table">Aam Mez-Kursi (Dining Table)</option>
+            <option value="balcony">Balcony Corner (Near tulsi plant & chai counter)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="bookNotes">Koi Khaas Farmaish? (Special request)</label>
+          <input type="text" id="bookNotes" placeholder="e.g. Extra white makkhan, quiet corner, birthday lunch">
+        </div>
+        <button type="submit" class="btn-primary w-full booking-submit-btn">Reserve Kar Diya Jaye! 🫶</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 4. VINTAGE PARCHA (PRINTABLE RECEIPT MODAL) -->
+  <div class="modal-backdrop" id="receiptModalBackdrop">
+    <div class="modal-card receipt-parcha-modal" id="receiptModalCard">
+      <button class="modal-close-icon" onclick="closeReceiptModal()">&times;</button>
+      <div class="parcha-paper">
+        <div class="parcha-header">
+          <div class="parcha-stamp-red">ORIGINAL PARCHA</div>
+          <h2 class="parcha-title">घर सा Café & Rasoi</h2>
+          <p class="parcha-addr">Sector 62, Noida, UP • Ph: +91 7428938113</p>
+          <div class="parcha-dotted">====================================</div>
+          <div class="parcha-meta-row">
+            <span id="parchaDate">Date: 06 Sep 2026</span>
+            <span id="parchaTime">Time: 12:45 PM</span>
+          </div>
+          <div class="parcha-meta-row">
+            <span>Tiffin Token: #GS-842</span>
+            <span>Rasoi: Stove #3 (Ghee)</span>
+          </div>
+          <div class="parcha-dotted">------------------------------------</div>
+        </div>
+
+        <div class="parcha-items" id="parchaItemsList">
+          <!-- Populated via JS -->
+        </div>
+
+        <div class="parcha-footer">
+          <div class="parcha-dotted">------------------------------------</div>
+          <div class="parcha-total-row">
+            <span>KUL RAASHI (TOTAL):</span>
+            <strong id="parchaTotal">₹0</strong>
+          </div>
+          <div class="parcha-dotted">====================================</div>
+          <div class="parcha-hand-note">
+            <p>“Peth bhar ke khana, khush rehna.”</p>
+            <span>— Maa ka aashirwaad ❤️</span>
+          </div>
+          <button class="btn-primary mini-btn w-full mt-3" onclick="window.print()">🖨️ Parcha Print Karo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Script -->
+  <script src="app.js"></script>
+</body>
+</html>
