@@ -151,4 +151,6 @@ Have an old family recipe or a favorite chai memory to contribute? We'd love to 
 
 *“Pet bhare ya na bhare, mann zaroor bharega.”*
 
+**Made with ❤️ by Vardaan**"
+
 </div>
